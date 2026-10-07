@@ -1,0 +1,138 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Runtime state that can expose identifiers, paths, errors, or host details
+logs/
+*.log
+*.pid
+*.lock
+*.tmp
+*.bak
+
+# Executed notebooks can contain paths, identifiers, or embedded MRI slices.
+# Keep public workflow logic in src/ and scripts/. Publish a notebook only after
+# clearing all outputs and reviewing every cell manually.
+notebooks/**/*.ipynb
+.ipynb_checkpoints/
+
+# Generated reports, figures, dashboards, and QC images
+reports/
+results/
+figures/
+plots/
+qc/
+qc_examples/
+*_report.*
+*_summary.csv
+*_selection.csv
+
+# Data, metadata exports, manifests, and analysis-ready tables
+data/
+datasets/
+raw/
+processed/
+outputs/
+private_manifests/
+manifests/
+**/manifests/
+*manifest*.csv
+*inventory*.csv
+*.csv
+*.tsv
+*.tab
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.arrow
+*.sav
+*.dta
+*.sas7bdat
+*.pkl
+*.pickle
+*.joblib
+*.jsonl
+*.json
+!/configs/*.json
+*.txt
+!/requirements.txt
+*.xml
+*.pdf
+*.npy
+*.npz
+
+# Medical imaging, masks, transforms, and related sidecars
+*.nii
+*.nii.gz
+*.dcm
+*.dicom
+*.ima
+*.mgh
+*.mgz
+*.nrrd
+*.mnc
+*.minc
+*.hdr
+*.img
+*.bval
+*.bvec
+*.h5
+*.hdf5
+*.mat
+*.tfm
+
+# Generated figures may contain patient-derived anatomy
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.gif
+*.webp
+*.svg
+
+# Third-party model weights and templates: download during local setup and
+# verify their redistribution terms before publishing them separately.
+*.pt
+*.pth
+*.ckpt
+resources/templates/
+resources/synthstrip/mri_synthstrip
+
+# Archives can hide ignored data from Git's normal filename checks
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar

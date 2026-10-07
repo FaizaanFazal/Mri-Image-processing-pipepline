@@ -1,0 +1,21 @@
+{
+  "gpu_physical_id": 1,
+  "full_max_files": null,
+  "driver_gpu_assignment": {
+    "ADNI": 1,
+    "OASIS3": 1,
+    "AIBL": 2
+  },
+  "aibl_conversion_test_max_files": 5,
+  "aibl_conversion_workers": 2,
+  "save_qc_plots": true,
+  "max_qc_plots": 3,
+  "replace": false,
+  "brain_mask": "FreeSurfer SynthStrip v1 main model, 1 mm border",
+  "n4_bias_correction": true,
+  "n4_mask": "SynthStrip brain mask",
+  "registration": "ANTs affine",
+  "registration_template": "resources/templates/MNI152_T1_1mm_brain.nii.gz",
+  "target_spacing_mm": [1.0, 1.0, 1.0],
+  "normalization": "per-volume brain-masked Z-score with zero background"
+}
