@@ -46,7 +46,7 @@ SkullStrippingProject/
 ├── scripts/                    command-line entry points and inventory builders
 ├── src/skullstrip_pipeline/    conversion, preprocessing, QC, and reporting code
 ├── resources/                  locally downloaded third-party tools/templates
-├── notebooks/                  local executed notebooks; ignored by Git
+├── notebooks/                  sanitized notebooks with aggregate history
 ├── logs/                       local runtime logs; ignored by Git
 ├── reports/                    generated reports; ignored by Git
 ├── results/                    generated plots/QC; ignored by Git
@@ -230,13 +230,16 @@ The following is a **fictional format example**, not a result from any participa
 
 Private visual QC uses only an anonymous sample number and numeric manifest position. Its top row shows orthogonal native slices with the SynthStrip contour; the bottom row shows normalized affine-MNI slices with subject-mask and template contours. Patient-derived QC images are intentionally excluded from Git even when labels are removed.
 
+The committed driver notebooks retain anonymous processing progress, aggregate QC tables, and aggregate QC dashboards. Embedded participant-level MRI montages are removed by `scripts/sanitize_public_notebooks.py`; the corresponding private files remain outside Git under `Processed/MRI/<DATASET>/qc_examples/`.
+
 ## Public-release checklist
 
 Before pushing:
 
 ```bash
+python scripts/sanitize_public_notebooks.py
 git status --short --ignored
-git ls-files | rg -i '\.(nii(\.gz)?|dcm|csv|tsv|xlsx|h5|png|jpg|ipynb)$' || true
+git ls-files | rg -i '\.(nii(\.gz)?|dcm|csv|tsv|xlsx|h5|jpg|jpeg)$' || true
 git diff --cached
 ```
 

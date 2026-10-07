@@ -39,10 +39,8 @@ logs/
 *.tmp
 *.bak
 
-# Executed notebooks can contain paths, identifiers, or embedded MRI slices.
-# Keep public workflow logic in src/ and scripts/. Publish a notebook only after
-# clearing all outputs and reviewing every cell manually.
-notebooks/**/*.ipynb
+# Notebook checkpoints are never public. Committed notebooks must first pass
+# scripts/sanitize_public_notebooks.py so participant-level images are removed.
 .ipynb_checkpoints/
 
 # Generated reports, figures, dashboards, and QC images
@@ -136,3 +134,9 @@ resources/synthstrip/mri_synthstrip
 *.tgz
 *.7z
 *.rar
+
+# Explicitly public, aggregate-only figures. Keep these exceptions last so they
+# override the general results/ and *.png privacy rules above.
+!results/
+!results/demographics/
+!results/demographics/*.png
